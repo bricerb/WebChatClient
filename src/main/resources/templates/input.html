@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+</head>
+<body style="background-color:salmon">
+
+
+<div style="margin:5px">
+    <form action="/chat" method="get">
+        <input type="text" placeholder="Enter your message" name="message"/>
+        <button type="submit">Send</button>
+    </form>
+
+    <form action="/reset" method="get">
+        <button type="submit">Refresh</button>
+    </form>
+
+</div>
+
+{{#serverMessages}}
+<div style="border:2px solid white; border-radius:70%; padding:5px; background-color:gray; color:white; text-align: center;">
+    <br>{{.}}</br>
+</div>
+{{/serverMessages}}
+</body>
+</html>

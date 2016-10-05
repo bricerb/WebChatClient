@@ -1,0 +1,46 @@
+<html lang="en" ng-app="TIYChocolateApp">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/com-ng-controller.js"></script>
+<script src="../static/js/com-ng-controller.js"></script>
+<head>
+
+</head>
+
+<body style="background-color: grey;" ng-controller="ChocolateController">
+<!--{{=<% %>=}}-->
+
+<%^user%>
+<form action="/login" method="post">
+    <input type="text" placeholder="Username" name="userName" required/>
+    <input type="password" placeholder="Password" name="password" required/>
+    <button type="submit">Login</button>
+</form>
+<%/user%>
+
+
+
+<%#user%>
+
+<div style="margin:5px">
+    <!--<form action="/" method="get">-->
+        <input type="text" placeholder="Enter your message" name="message" ng-model="input.text"/>
+        <!--<button type="submit">Send</button>-->
+    <!--</form>-->
+</div>
+
+    <input type="button" ng-click="sendMessage()" value="Send"/>
+    <input type="button" ng-click="getMessages()" value="History"/>
+
+<ul style="background-color: black; color: orange; transition: color .5s ease;">
+        <hr>
+            <li ng-repeat="message in messages">
+                {{message.user.name}} says: {{message.text}}
+            </li>
+        <hr>
+</ul>
+
+<%/user%>
+
+
+</body>
+</html>
